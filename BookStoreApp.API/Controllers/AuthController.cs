@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using BookStoreApp.API.Data;
 using BookStoreApp.API.Models.User;
 using BookStoreApp.API.Static;
@@ -50,7 +50,7 @@ namespace BookStoreApp.API.Controllers
                 }
 
                 await _userManager.AddToRoleAsync(user, "User");
-                return Accepted();
+                return Ok();
             } catch (Exception ex)
             {
                 _logger.LogError(ex, $"Something went wrong in the {nameof(Register)}");
